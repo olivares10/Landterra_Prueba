@@ -50,40 +50,49 @@ Partial Public Class WebForm1
     Protected WithEvents lblTituloFormulario As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox1.
+    '''Control txtname.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtname As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control ListBox1.
+    '''Control lbID.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ListBox1 As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents lbID As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
-    '''Control TextBox2.
+    '''Control txtIdentificacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtIdentificacion As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control Calendar1.
+    '''Control FechaIngreso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Calendar1 As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents FechaIngreso As Global.System.Web.UI.WebControls.Calendar
+
+    '''<summary>
+    '''Control txtSalario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtSalario As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Button1.

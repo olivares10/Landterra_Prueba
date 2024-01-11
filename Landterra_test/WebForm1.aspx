@@ -25,7 +25,7 @@
                         <tr>
                             <td align="center">
                                 <asp:Label ID="lblTituloFormulario" runat="server" Text="Registro de Emplados."></asp:Label>
-                                <span id="demoCountdown" style="font-weight: bold; color: #59A1E9;">&nbsp;</span>
+                              
                             </td>
                         </tr>
                     </table>
@@ -35,13 +35,13 @@
                         <tr>
                             <td>Ingrese Nombre Completo del Emplado:</td>
                             <td>
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="txtname" runat="server"></asp:TextBox></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td>Seleccione el tipo de Identificacion:</td>
                             <td>
-                                <asp:ListBox ID="ListBox1" runat="server" Height="24px" Width="158px">
+                                <asp:ListBox ID="lbID" runat="server" Height="24px" Width="158px">
                                     <asp:ListItem>Cedula</asp:ListItem>
                                     <asp:ListItem>Pasaporte</asp:ListItem>
                                 </asp:ListBox></td>
@@ -50,20 +50,26 @@
                         <tr>
                             <td>Ingreses numero de Identificacion:</td>
                             <td>
-                                <asp:TextBox ID="TextBox2" runat="server" Width="170px"></asp:TextBox></td>
+                                <asp:TextBox ID="txtIdentificacion" runat="server" Width="170px"></asp:TextBox></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td>Fecha de Ingreso:</td>
                             <td>
-                                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                                <asp:Calendar ID="FechaIngreso" runat="server"></asp:Calendar>
                             </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Salario Base:</td>
+                            <td>
+                                <asp:TextBox ID="txtSalario" runat="server" Width="170px"></asp:TextBox></td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td>Direccion:</td>
                             <td>
-                                <textarea id="TextArea1" cols="20" name="S1" rows="1"></textarea></td>
+                                <textarea id="txtDirecion" cols="20" name="S1" rows="1"></textarea></td>
                             <td>
                                 <asp:Button ID="Button1" runat="server" Text="Guardar" /></td>
                         </tr>
