@@ -5,13 +5,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Registro de Emplados</title>
     <style type="text/css">
         #TextArea1 {
             width: 241px;
             height: 78px;
         }
     </style>
+    <script>
+        function mostrarModalAgregarVacaciones() {
+            $("#ModalAgregarVacaciones").modal('show');
+        }
+        function ocultarModalNSalida() {
+            $("#ModalAgregarVacaciones").modal('hide');
+        }
+        function ModalVacaciones(IDTransaccion) {
+            __doPostBack('liVacaciones', IDTransaccion);
+        }
+    </script>
 </head>
 
 <body>
@@ -122,6 +133,46 @@
         <div style="height: 487px">            
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true"></asp:GridView>
         </div>
+        <div id="ModalAgregarVacaciones" class="modal fade">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">x</a>
+                <h3 class="h3 text-justify text-info text-capitalize">Anular Salida Equipo</h3>
+            </div>
+            <asp:UpdatePanel ID="upAnularTransS" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
+                <ContentTemplate>
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <label class="text-right h4">ID Empleado:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <asp:TextBox ID="txtIDEmpleado" runat="server" AutoPostBack="true" CssClass="form-control" Enabled="false">
+                                </asp:TextBox>
+                            </div>
+                            <div class="col-md-12">
+                                Cantidad de equipos:           
+                             <label runat="server" id="Label2" class="text-right h4"></label>
+                            </div>
+                        </div>
+
+                        <br />
+
+
+                    </div>
+                    <div class="modal-footer">
+     
+                        <asp:Button ID="btnAceptarVacaciones" runat="server" Text="Agregar" class="btn btn-success" />
+                        <asp:Button ID="btnCerrar" runat="server" Text="Cancelar" class="btn btn-default" UseSubmitBehavior="false"" />
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+</div>
     </form>
 </bodv>
 </html>
