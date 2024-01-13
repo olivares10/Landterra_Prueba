@@ -23,6 +23,15 @@ Partial Public Class WebForm1
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
+    '''Control ScriptManager1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
     '''Control Registo.
     '''</summary>
     '''<remarks>
@@ -30,15 +39,6 @@ Partial Public Class WebForm1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Registo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''Control UpdatePanel1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
     '''Control lblTituloFormulario.
@@ -59,13 +59,13 @@ Partial Public Class WebForm1
     Protected WithEvents txtname As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control lbID.
+    '''Control DropDownList1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbID As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control txtIdentificacion.
@@ -83,7 +83,7 @@ Partial Public Class WebForm1
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents FechaIngreso As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents FechaIngreso As Global.System.Web.UI.HtmlControls.HtmlInputGenericControl
 
     '''<summary>
     '''Control txtSalario.
@@ -93,6 +93,15 @@ Partial Public Class WebForm1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtSalario As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control txtDirecion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtDirecion As Global.System.Web.UI.HtmlControls.HtmlTextArea
 
     '''<summary>
     '''Control Button1.
@@ -111,15 +120,6 @@ Partial Public Class WebForm1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Vacaciones As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''Control UpdatePanel2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents UpdatePanel2 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
     '''Control Label1.
@@ -149,22 +149,22 @@ Partial Public Class WebForm1
     Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control Calendar2.
+    '''Control inicio_vacaciones.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Calendar2 As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents inicio_vacaciones As Global.System.Web.UI.HtmlControls.HtmlInputGenericControl
 
     '''<summary>
-    '''Control Calendar3.
+    '''Control fin_vacaciones.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Calendar3 As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents fin_vacaciones As Global.System.Web.UI.HtmlControls.HtmlInputGenericControl
 
     '''<summary>
     '''Control Button2.
@@ -176,6 +176,15 @@ Partial Public Class WebForm1
     Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Control Button3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control GridView1.
     '''</summary>
     '''<remarks>
@@ -183,40 +192,4 @@ Partial Public Class WebForm1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control upAnularTransS.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents upAnularTransS As Global.System.Web.UI.UpdatePanel
-
-    '''<summary>
-    '''Control txtIDEmpleado.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtIDEmpleado As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control Label2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''Control btnAceptarVacaciones.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnAceptarVacaciones As Global.System.Web.UI.WebControls.Button
 End Class

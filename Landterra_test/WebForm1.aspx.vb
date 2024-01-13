@@ -1,26 +1,96 @@
-﻿Public Class WebForm1
+﻿Imports Negocio
+Public Class WebForm1
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-        If Not IsNothing(Request.Params.Get("__EVENTTARGET")) Then
-            If Request.Params.Get("__EVENTTARGET").ToString() = "liVacaciones" Then
-                CargarEditar(CInt(Request.Params.Get("__EVENTARGUMENT").ToString()))
-            End If
-
-        End If
+        CargarReporte()
     End Sub
 
     Private Sub CargarEditar(ByVal IDTransaccion As Integer)
-        txtIDEmpleado.Text = IDTransaccion
 
-        'Dim dtAprobado As DataTable = Sql("select * from Bodega_Transacciones where IDTransaccion = '" & txtIDAnularTransS.Text & "'", "tblAprobado").Tables(0)
-        'If CInt(dtAprobado.Rows(0)("IDEstadoTrans")) = 3 Then
-        '    TryCast(Me.Parent.FindControl("MensajeJQuery1"), MensajeJQuery).ShowMessage("No se Puede Anular una transaccion Aplicada", 2)
-        '    ScriptManager.RegisterClientScriptBlock(Me.uppanelSalidas, Page.GetType(), "Script", "oculatarModalAnularS();", True)
-        'End If
-        'upAnularTransS.Update()
-        'ScriptManager.RegisterClientScriptBlock(Me.uppanelSalidas, Page.GetType(), "Script", "mostrarModalAnularS();", True)
+
     End Sub
 
+    Private Sub CargarReporte()
+        Dim Resultado As DataTable
+        Using ls = New ClassEmpleados()
+            Resultado = ls.ListarEmpleado()
+            GridView1.DataSource = Resultado
+            GridView1.DataBind()
+        End Using
+
+
+    End Sub
+
+    Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+        Registo.Visible = False
+        Vacaciones.Visible = True
+        Dim index As Integer = GridView1.SelectedIndex
+        If index >= 0 AndAlso index < GridView1.Rows.Count Then
+            Dim filaSeleccionada As GridViewRow = GridView1.Rows(index)
+
+            hfIDEmpleado.Value = filaSeleccionada.Cells(1).Text
+            TextBox3.Text = filaSeleccionada.Cells(2).Text
+        End If
+
+
+    End Sub
+
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim Resultado As String
+        Using ls = New ClassEmpleados()
+            Resultado = ls.AgregarVacaciones(hfIDEmpleado.Value, inicio_vacaciones.Value, fin_vacaciones.Value)
+
+        End Using
+        If Resultado Is Nothing Then
+            CargarReporte()
+            txtname.Text = ""
+            DropDownList1.SelectedValue = "Cedula"
+            txtIdentificacion.Text = ""
+            FechaIngreso.Value = ""
+            inicio_vacaciones.Value = ""
+            fin_vacaciones.Value = ""
+            txtSalario.Text = ""
+            txtDirecion.Value = ""
+            hfIDEmpleado.Value = ""
+            Registo.Visible = True
+            Vacaciones.Visible = False
+        End If
+
+
+    End Sub
+    Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        CargarReporte()
+        txtname.Text = ""
+        DropDownList1.SelectedValue = "Cedula"
+        txtIdentificacion.Text = ""
+        FechaIngreso.Value = ""
+        inicio_vacaciones.Value = ""
+        fin_vacaciones.Value = ""
+        txtSalario.Text = ""
+        txtDirecion.Value = ""
+        hfIDEmpleado.Value = ""
+        Registo.Visible = True
+        Vacaciones.Visible = False
+    End Sub
+
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim Resultado As String
+        Using ls = New ClassEmpleados()
+            Resultado = ls.AgregarEmpleados(txtname.Text, DropDownList1.Text, txtIdentificacion.Text, FechaIngreso.Value, txtSalario.Text, txtDirecion.Value)
+
+        End Using
+        If Resultado Is Nothing Then
+            CargarReporte()
+            txtname.Text = ""
+            DropDownList1.SelectedValue = "Cedula"
+            txtIdentificacion.Text = ""
+            FechaIngreso.Value = ""
+            txtSalario.Text = ""
+            txtDirecion.Value = ""
+        End If
+        'CargarReporte()
+    End Sub
 End Class

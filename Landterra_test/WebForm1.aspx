@@ -4,6 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="Scripts/bootstrap.min.js" rel="stylesheet" />
+    <link href="Scripts/bootstrap.js" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Scripts/bootstrap.js" rel="stylesheet" />
+    <link rel="stylesheet" href="Scripts/bootstrap.min.css">
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Registro de Emplados</title>
     <style type="text/css">
@@ -11,11 +17,40 @@
             width: 241px;
             height: 78px;
         }
+
+        .miClaseCSS {
+            /* Define tus estilos personalizados aquí */
+            border: 1px solid #ccc;
+            /* Otros estilos... */
+        }
+
+            .miClaseCSS tr:nth-child(even) {
+                /* Estilos para filas pares */
+                background-color: #f2f2f2; /* Cambia el color de fondo según tus preferencias */
+            }
+
+            .miClaseCSS tr:nth-child(odd) {
+                /* Estilos para filas impares */
+                background-color: #ffffff; /* Cambia el color de fondo según tus preferencias */
+            }
+
+            .miClaseCSS th, .miClaseCSS td {
+                /* Estilos para celdas en general */
+                border: 1px solid #ddd; /* Borde entre celdas */
+                padding: 8px; /* Espaciado interno de las celdas */
+                text-align: left;
+            }
+
+        }
     </style>
     <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
         function mostrarModalAgregarVacaciones() {
             $("#ModalAgregarVacaciones").modal('show');
         }
+}
         function ocultarModalNSalida() {
             $("#ModalAgregarVacaciones").modal('hide');
         }
@@ -25,154 +60,131 @@
     </script>
 </head>
 
-<body>
-    <form id="form1" runat="server">
+<body >
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <form id="form1" runat="server" class="container">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
         <div style="height: 487px" runat="server" id="Registo">
             <br />
             <br />
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always">
-                <ContentTemplate>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td align="center">
-                                <asp:Label ID="lblTituloFormulario" runat="server" Text="Registro de Emplados."></asp:Label>
-                              
-                            </td>
-                        </tr>
-                    </table>
-                    <table style="width: 100%;">
 
+            <table style="width: 100%;">
+                <tr>
+                    <td align="center">
+                        <asp:Label ID="lblTituloFormulario" runat="server" class="btn btn-info" Text="Registro de Emplados."></asp:Label>
 
-                        <tr>
-                            <td>Ingrese Nombre Completo del Emplado:</td>
-                            <td>
-                                <asp:TextBox ID="txtname" runat="server"></asp:TextBox></td>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%;" class="table">
+                <caption>
+   
+                    <tr>
+                        <td>Ingrese Nombre Completo del Emplado:</td>
+                        <td>
+                            <asp:TextBox ID="txtname" runat="server" class="form-control"></asp:TextBox>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Seleccione el tipo de Identificacion:</td>
+                        <td>
+                            <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
+                                <asp:ListItem>Cedula</asp:ListItem>
+                                <asp:ListItem>Pasaporte</asp:ListItem>
+                            </asp:DropDownList>
+
                             <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Seleccione el tipo de Identificacion:</td>
-                            <td>
-                                <asp:ListBox ID="lbID" runat="server" Height="24px" Width="158px">
-                                    <asp:ListItem>Cedula</asp:ListItem>
-                                    <asp:ListItem>Pasaporte</asp:ListItem>
-                                </asp:ListBox></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Ingreses numero de Identificacion:</td>
-                            <td>
-                                <asp:TextBox ID="txtIdentificacion" runat="server" Width="170px"></asp:TextBox></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Fecha de Ingreso:</td>
-                            <td>
-                                <asp:Calendar ID="FechaIngreso" runat="server"></asp:Calendar>
-                            </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Salario Base:</td>
-                            <td>
-                                <asp:TextBox ID="txtSalario" runat="server" Width="170px"></asp:TextBox></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Direccion:</td>
-                            <td>
-                                <textarea id="txtDirecion" cols="20" name="S1" rows="1"></textarea></td>
-                            <td>
-                                <asp:Button ID="Button1" runat="server" Text="Guardar" /></td>
-                        </tr>
-                    </table>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ingreses numero de Identificacion:</td>
+                        <td>
+                            <asp:TextBox ID="txtIdentificacion" runat="server" Width="170px" class="form-control"></asp:TextBox>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha de Ingreso:</td>
+                        <td>
+                            <%--<asp:Calendar ID="CalendarIngreso" runat="server" Height="10px" ></asp:Calendar>--%>
+                            <input id="FechaIngreso" runat="server" type="date">
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Salario Base:</td>
+                        <td>
+                            <asp:TextBox ID="txtSalario" runat="server" Width="170px" class="form-control" aria-label="Amount (to the nearest dollar)"></asp:TextBox>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Direccion:</td>
+                        <td>
+                            <textarea id="txtDirecion" name="S1" runat="server"></textarea></td>
+                        <td>
+                            <asp:Button ID="Button1" runat="server" Text="Guardar" />
+                        </td>
+                    </tr>
+                </caption>
+            </table>
+
         </div>
         <div style="height: 487px" runat="server" id="Vacaciones" visible="false">
             <br />
             <br />
-            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
-                <ContentTemplate>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td align="center">
-                                <asp:Label ID="Label1" runat="server" Text="Registro de Vacaciones"></asp:Label>
 
-                            </td>
-                        </tr>
-                    </table>
-                    <table style="width: 100%;">
-                        <asp:HiddenField ID="hfIDEmpleado" runat="server" />
-                        <tr>
-                            <td>Emplado:</td>
-                            <td>
-                                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>Fecha de Inicio:</td>
-                            <td>
-                                <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
-                            </td>
-                            <td>Fecha de Fin:</td>
-                            <td>
-                                <asp:Calendar ID="Calendar3" runat="server"></asp:Calendar>
-                            </td>
+            <table style="width: 100%;">
+                <tr>
+                    <td align="center">
+                        <asp:Label ID="Label1" runat="server" Text="Registro de Vacaciones" class="btn btn-warning"></asp:Label>
 
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Button ID="Button2" runat="server" Text="Guardar" />
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%;" class="table">
+                <asp:HiddenField ID="hfIDEmpleado" runat="server" />
+                <tr>
+                    <td>Emplado:</td>
+                    <td>
+                        <asp:TextBox ID="TextBox3" runat="server" class="form-control"></asp:TextBox></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Fecha de Inicio:</td>
+                    <td>
+                        <input id="inicio_vacaciones" runat="server" type="date">
+                    </td>
+                    <td>Fecha de Fin:</td>
+                    <td>
+                        <input id="fin_vacaciones" runat="server" type="date">
+                    </td>
 
-                            </td>
-                        </tr>
-                    </table>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="Button2" runat="server" class="btn btn-primary" Text="Guardar Vacaciones" />
+
+                    </td>
+                    <td>
+                        <asp:Button ID="Button3" runat="server" class="btn btn-danger" Text="Cancelar" />
+
+                    </td>
+                </tr>
+            </table>
+
         </div>
-        <div style="height: 487px">            
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true"></asp:GridView>
+        <br />
+        <br />
+        <div>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="miClaseCSS"></asp:GridView>
         </div>
-        <div id="ModalAgregarVacaciones" class="modal fade">
 
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a class="close" data-dismiss="modal">x</a>
-                <h3 class="h3 text-justify text-info text-capitalize">Anular Salida Equipo</h3>
-            </div>
-            <asp:UpdatePanel ID="upAnularTransS" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
-                <ContentTemplate>
-                    <div class="modal-body">
-                        <div class="row">
-
-                            <div class="col-md-6">
-                                <label class="text-right h4">ID Empleado:</label>
-                            </div>
-                            <div class="col-md-6">
-                                <asp:TextBox ID="txtIDEmpleado" runat="server" AutoPostBack="true" CssClass="form-control" Enabled="false">
-                                </asp:TextBox>
-                            </div>
-                            <div class="col-md-12">
-                                Cantidad de equipos:           
-                             <label runat="server" id="Label2" class="text-right h4"></label>
-                            </div>
-                        </div>
-
-                        <br />
-
-
-                    </div>
-                    <div class="modal-footer">
-     
-                        <asp:Button ID="btnAceptarVacaciones" runat="server" Text="Agregar" class="btn btn-success" />
-                        <asp:Button ID="btnCerrar" runat="server" Text="Cancelar" class="btn btn-default" UseSubmitBehavior="false"" />
-                    </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
-        </div>
-    </div>
-</div>
     </form>
 </bodv>
+
 </html>

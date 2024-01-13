@@ -194,6 +194,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ado\ado.vbproj">
+      <Project>{60820ecf-0f55-41c6-9afc-4ae0cf353672}</Project>
+      <Name>ado</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.vbproj">
       <Project>{bea43763-883e-4903-9afb-8e42c93ab356}</Project>
       <Name>Negocio</Name>
