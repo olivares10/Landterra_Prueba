@@ -9,6 +9,12 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Negocio", "Negocio\Negocio.
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ado", "ado\ado.vbproj", "{60820ECF-0F55-41C6-9AFC-4AE0CF353672}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sqlDB Script", "sqlDB Script", "{B81BEE78-E8E4-4926-8A09-0455386DD9F7}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\inetpub\GestionDeEmpleados = ..\..\..\..\..\inetpub\GestionDeEmpleados
+		..\..\..\Documents\script_GestionDeEmpleados.sql = ..\..\..\Documents\script_GestionDeEmpleados.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
