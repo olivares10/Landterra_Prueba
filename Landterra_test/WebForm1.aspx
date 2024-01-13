@@ -43,21 +43,7 @@
 
         }
     </style>
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-        })
-        function mostrarModalAgregarVacaciones() {
-            $("#ModalAgregarVacaciones").modal('show');
-        }
-}
-        function ocultarModalNSalida() {
-            $("#ModalAgregarVacaciones").modal('hide');
-        }
-        function ModalVacaciones(IDTransaccion) {
-            __doPostBack('liVacaciones', IDTransaccion);
-        }
-    </script>
+
 </head>
 
 <body >
@@ -176,7 +162,11 @@
                     </td>
                 </tr>
             </table>
-
+        <br />
+        <br />
+        <div>
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="true" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="miClaseCSS"></asp:GridView>
+        </div>
         </div>
         <br />
         <br />

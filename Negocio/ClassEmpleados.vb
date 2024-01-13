@@ -35,6 +35,11 @@ Public Class ClassEmpleados
         Dispose(disposing:=True)
         GC.SuppressFinalize(Me)
     End Sub
+    Public Class EmpleadoModel
+        Public Property ID As Integer
+        Public Property Nombre As String
+        ' Otras propiedades según tu modelo
+    End Class
     Public Function ListarEmpleado() As DataTable
         Try
             'Using cn = New conexion(ConfigurationManager.ConnectionStrings("GestionDeEmpleadosEntities").ConnectionString)
@@ -42,6 +47,19 @@ Public Class ClassEmpleados
 
                 Dim empleados As DataTable = cn.SQL("select * from vw_empleados", "tblEmpleados").Tables(0)
                 ListarEmpleado = empleados
+            End Using
+
+        Catch ex As Exception
+            Return New DataTable
+        End Try
+    End Function
+    Public Function ListarVacacionesEmpleado(ByVal idEmpleado As Integer) As DataTable
+        Try
+            'Using cn = New conexion(ConfigurationManager.ConnectionStrings("GestionDeEmpleadosEntities").ConnectionString)
+            Using cn = New conexion()
+
+                Dim empleados As DataTable = cn.SQL(" select FechaInicio,FechaFin,(DATEDIFF(DAY, FechaInicio, FechaFin)+1)AS Vacaciones_Tomadas from Vacaciones where EmpleadoId='" & idEmpleado & "'", "tblVacaciones").Tables(0)
+                ListarVacacionesEmpleado = empleados
             End Using
 
         Catch ex As Exception

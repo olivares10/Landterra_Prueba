@@ -19,7 +19,6 @@ Public Class WebForm1
             GridView1.DataBind()
         End Using
 
-
     End Sub
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -32,6 +31,13 @@ Public Class WebForm1
 
             hfIDEmpleado.Value = filaSeleccionada.Cells(1).Text
             TextBox3.Text = filaSeleccionada.Cells(2).Text
+
+            Dim Resultado As DataTable
+            Using ls = New ClassEmpleados()
+                Resultado = ls.ListarVacacionesEmpleado(hfIDEmpleado.Value)
+                GridView2.DataSource = Resultado
+                GridView2.DataBind()
+            End Using
         End If
 
 

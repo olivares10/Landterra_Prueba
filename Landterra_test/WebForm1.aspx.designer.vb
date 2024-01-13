@@ -185,6 +185,15 @@ Partial Public Class WebForm1
     Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Control GridView2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''Control GridView1.
     '''</summary>
     '''<remarks>
