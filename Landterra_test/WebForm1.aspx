@@ -46,7 +46,7 @@
 
 </head>
 
-<body >
+<body>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <form id="form1" runat="server" class="container">
@@ -66,7 +66,7 @@
             </table>
             <table style="width: 100%;" class="table">
                 <caption>
-   
+
                     <tr>
                         <td>Ingrese Nombre Completo del Emplado:</td>
                         <td>
@@ -162,11 +162,11 @@
                     </td>
                 </tr>
             </table>
-        <br />
-        <br />
-        <div>
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="true" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="miClaseCSS"></asp:GridView>
-        </div>
+            <br />
+            <br />
+            <div>
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="true" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="miClaseCSS"></asp:GridView>
+            </div>
         </div>
         <br />
         <br />
